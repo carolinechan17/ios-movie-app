@@ -9,7 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Button(action: {}) {
+            HStack {
+                Image(systemName: "film")
+                    .resizable()
+                    .frame(width: 40, height: 40)
+                    .foregroundColor(Color.white)
+                    
+                Text("Movie App")
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.white)
+            }
+            .padding()
+            .background(Color("Blue2Color"))
+            .cornerRadius(20)
+        }
     }
 }
 
