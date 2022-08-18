@@ -10,22 +10,32 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         NavigationView {
-            NavigationLink(destination: ContentView()) {
-                    HStack {
-                        Image(systemName: "film")
-                            .resizable()
-                            .frame(width: 40, height: 40)
-                            .foregroundColor(Color.white)
-                            
-                        Text("Movie App")
-                            .fontWeight(.bold)
-                            .foregroundColor(Color.white)
+            ZStack{
+                Color("WhiteColor").edgesIgnoringSafeArea(.all)
+                VStack{
+                    NavigationLink(destination: ContentView()) {
+                            HStack {
+                                Image(systemName: "film")
+                                    .resizable()
+                                    .frame(width: 100, height: 100)
+                                    .foregroundColor(Color.white)
+                            }
+                            .padding()
+                            .background(Color("Blue1Color"))
+                            .cornerRadius(20)
                     }
-                    .padding()
-                    .background(Color("Blue2Color"))
-                    .cornerRadius(20)
+                    
+                    Spacer()
+                    
+                    Text("iOS Movie App")
+                        .fontWeight(.bold)
+                        .font(.system(size: 25))
+                        .foregroundColor(Color("Blue2Color"))
+                        .padding(.bottom, 40)
+                }
             }
         }
+        .navigationBarHidden(true)
     }
 }
 
