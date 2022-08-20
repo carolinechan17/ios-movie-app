@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @EnvironmentObject var api: Api
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        List(api.movies, id: \.id) { movie in
+            Text("\(movie.fullTitle)")
+        }
+        .onAppear() {
+            api.loadData()
+        }
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E687A67228AF733C00A4484B /* MovieModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E687A67128AF733C00A4484B /* MovieModel.swift */; };
 		E6FE96BF28AE2F45007BFADF /* movie_appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE96BE28AE2F45007BFADF /* movie_appApp.swift */; };
 		E6FE96C128AE2F45007BFADF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6FE96C028AE2F45007BFADF /* ContentView.swift */; };
 		E6FE96C328AE2F46007BFADF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E6FE96C228AE2F46007BFADF /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E687A67128AF733C00A4484B /* MovieModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieModel.swift; sourceTree = "<group>"; };
 		E6FE96BB28AE2F45007BFADF /* movie-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "movie-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FE96BE28AE2F45007BFADF /* movie_appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie_appApp.swift; sourceTree = "<group>"; };
 		E6FE96C028AE2F45007BFADF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,6 +36,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E611C41C28AF86F100A8AACA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E687A67128AF733C00A4484B /* MovieModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E6FE96B228AE2F45007BFADF = {
 			isa = PBXGroup;
 			children = (
@@ -53,6 +63,7 @@
 		E6FE96BD28AE2F45007BFADF /* movie-app */ = {
 			isa = PBXGroup;
 			children = (
+				E611C41C28AF86F100A8AACA /* Model */,
 				E6FE96CC28AE2FB8007BFADF /* View */,
 				E6FE96BE28AE2F45007BFADF /* movie_appApp.swift */,
 				E6FE96C228AE2F46007BFADF /* Assets.xcassets */,
@@ -148,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E687A67228AF733C00A4484B /* MovieModel.swift in Sources */,
 				E6FE96CE28AE2FD5007BFADF /* HomeView.swift in Sources */,
 				E6FE96C128AE2F45007BFADF /* ContentView.swift in Sources */,
 				E6FE96BF28AE2F45007BFADF /* movie_appApp.swift in Sources */,
