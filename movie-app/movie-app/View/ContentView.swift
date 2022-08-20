@@ -16,7 +16,26 @@ struct ContentView: View {
             HStack {
                 AsyncImage(url: URL(string: "\(movie.image)"))
                 
-                Text("\(movie.fullTitle)")
+                VStack(alignment: .leading) {
+                    Text("\(movie.title)")
+                        .fontWeight(.bold)
+                        .font(.system(size: 25))
+                    
+                    Text("\(movie.year)")
+                        .fontWeight(.medium)
+                        .font(.system(size: 20))
+                        .padding(.bottom)
+                    
+                    Text("Rating: \(movie.imDbRating)")
+                        .fontWeight(.regular)
+                        .font(.system(size: 15))
+                    
+                    Spacer()
+                    
+                    Text("Crew: \(movie.crew)")
+                        .fontWeight(.light)
+                        .font(.system(size: 15))
+                }
             }
         }
         .onAppear() {
