@@ -13,7 +13,11 @@ struct ContentView: View {
 
     var body: some View {
         List(api.movies, id: \.id) { movie in
-            Text("\(movie.fullTitle)")
+            HStack {
+                AsyncImage(url: URL(string: "\(movie.image)"))
+                
+                Text("\(movie.fullTitle)")
+            }
         }
         .onAppear() {
             api.loadData()
