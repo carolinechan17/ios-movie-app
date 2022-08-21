@@ -12,11 +12,30 @@ struct ContentView: View {
     @EnvironmentObject var api: Api
 
     var body: some View {
-        List(api.movies, id: \.id) { movie in
-            ListView(imageURL: movie.image, title: movie.title, year: movie.year, rating: movie.imDbRating, crew: movie.crew)
-        }
-        .onAppear() {
-            api.loadData()
+        TabView {
+            //MARK: Show movie poster and brief description
+            List(api.movies, id: \.id) { movie in
+                ListView(imageURL: movie.image, title: movie.title, year: movie.year, rating: movie.imDbRating, crew: movie.crew)
+            }
+            .onAppear() {
+                api.loadMovieData()
+            }
+            .tabItem {
+                Image(systemName: "film.circle")
+                Text("Top Movies")
+            }
+            
+            //MARK: Show TV Show poster and brief description
+            List(api.tvShows, id: \.id){tvShow in
+                ListView(imageURL: tvShow.image, title: tvShow.title, year: tvShow.year, rating: tvShow.imDbRating, crew: tvShow.crew)
+            }
+            .onAppear() {
+                api.loadTVShowData()
+            }
+            .tabItem {
+                Image(systemName: "tv.circle")
+                Text("Top TV Shows")
+            }
         }
     }
 }
