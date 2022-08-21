@@ -13,8 +13,7 @@ struct movie_appApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(api)
+            HomeView()
         }
     }
 }

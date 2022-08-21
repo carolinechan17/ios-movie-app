@@ -13,7 +13,7 @@ struct HomeView: View {
             ZStack{
                 Color("WhiteColor").edgesIgnoringSafeArea(.all)
                 VStack{
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView().environmentObject(Api())) {
                             HStack {
                                 Image(systemName: "film")
                                     .resizable()

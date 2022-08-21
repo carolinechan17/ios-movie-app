@@ -24,7 +24,6 @@ struct ContentView: View {
                     Text("\(movie.year)")
                         .fontWeight(.medium)
                         .font(.system(size: 20))
-                        .padding(.bottom)
                     
                     Text("Rating: \(movie.imDbRating)")
                         .fontWeight(.regular)
