@@ -14,12 +14,20 @@ struct ContentView: View {
     var body: some View {
         List(api.movies, id: \.id) { movie in
             HStack {
-                AsyncImage(url: URL(string: "\(movie.image)"))
+                AsyncImage(url: URL(string: "\(movie.image)")){image in
+                    image
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .padding()
+                } placeholder: {
+                    Color.gray
+                }
+                .frame(width: 120, height: 160)
                 
                 VStack(alignment: .leading) {
                     Text("\(movie.title)")
                         .fontWeight(.bold)
-                        .font(.system(size: 25))
+                        .font(.system(size: 22))
                     
                     Text("\(movie.year)")
                         .fontWeight(.medium)
