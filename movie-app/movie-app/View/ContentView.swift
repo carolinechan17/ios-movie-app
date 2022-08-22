@@ -15,7 +15,9 @@ struct ContentView: View {
         TabView {
             //MARK: Show movie poster and brief description
             List(api.movies, id: \.id) { movie in
-                ListView(imageURL: movie.image, title: movie.title, year: movie.year, rating: movie.imDbRating, crew: movie.crew)
+                NavigationLink(destination: DetailPageView()){
+                    ListView(imageURL: movie.image, title: movie.title, year: movie.year, rating: movie.imDbRating, crew: movie.crew)
+                }
             }
             .onAppear() {
                 api.loadMovieData()
