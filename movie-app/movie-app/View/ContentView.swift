@@ -29,7 +29,9 @@ struct ContentView: View {
             
             //MARK: Show TV Show poster and brief description
             List(api.tvShows, id: \.id){tvShow in
-                ListView(imageURL: tvShow.image, title: tvShow.title, year: tvShow.year, rating: tvShow.imDbRating, crew: tvShow.crew)
+                NavigationLink(destination: DetailPageView()){
+                    ListView(imageURL: tvShow.image, title: tvShow.title, year: tvShow.year, rating: tvShow.imDbRating, crew: tvShow.crew)
+                }
             }
             .onAppear() {
                 api.loadTVShowData()
