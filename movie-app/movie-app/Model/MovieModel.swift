@@ -26,6 +26,7 @@ struct MovieEntry: Decodable, Identifiable {
 class Api : ObservableObject{
     @Published var movies: [MovieEntry] = []
     @Published var tvShows: [MovieEntry] = []
+    @Published var detail = Details()
     
     //MARK: Function to load movie data from api
     func loadMovieData() {
