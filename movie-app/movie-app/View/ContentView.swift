@@ -15,7 +15,7 @@ struct ContentView: View {
         TabView {
             //MARK: Show movie poster and brief description
             List(api.movies, id: \.id) { movie in
-                NavigationLink(destination: DetailPageView()){
+                NavigationLink(destination: DetailPageView(id: movie.id).environmentObject(Api())){
                     ListView(imageURL: movie.image, title: movie.title, year: movie.year, rating: movie.imDbRating, crew: movie.crew)
                 }
             }
@@ -29,7 +29,7 @@ struct ContentView: View {
             
             //MARK: Show TV Show poster and brief description
             List(api.tvShows, id: \.id){tvShow in
-                NavigationLink(destination: DetailPageView()){
+                NavigationLink(destination: DetailPageView(id: tvShow.id).environmentObject(Api())){
                     ListView(imageURL: tvShow.image, title: tvShow.title, year: tvShow.year, rating: tvShow.imDbRating, crew: tvShow.crew)
                 }
             }

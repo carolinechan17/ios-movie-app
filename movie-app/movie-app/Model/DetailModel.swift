@@ -29,7 +29,7 @@ struct Details: Decodable {
     var stars: String = ""
     var starList: [Entry] = []
     var actorList: [Actor] = []
-    var fullCast: String = ""
+    var fullCast: String? = nil
     var genres: String = ""
     var genreList: [Entry2] = []
     var companies: String = ""
@@ -42,19 +42,19 @@ struct Details: Decodable {
     var imDbRating: String = ""
     var imDbRatingVotes: String = ""
     var metacriticRating: String = ""
-    var ratings: String = ""
-    var wikipedia: String = ""
-    var posters: String = ""
-    var images: String = ""
-    var trailer: String = ""
-    var boxOffice: [BoxOffice] = []
-    var tagline: String = ""
+    var ratings: String? = nil
+    var wikipedia: String? = nil
+    var posters: String? = nil
+    var images: String? = nil
+    var trailer: String? = nil
+    var boxOffice: [String: String] = [:]
+    var tagline: String? = nil
     var keywords: String = ""
     var keywordList: [String] = []
     var similars: [Similar] = []
-    var tvSeriesInfo: String = ""
-    var tvEpisodeInfo: String = ""
-    var errorMessage: String = ""
+    var tvSeriesInfo: String? = nil
+    var tvEpisodeInfo: String? = nil
+    var errorMessage: String? = nil
 }
 
 //MARK: Struct for directorList, writerList, starList, companyList
@@ -75,14 +75,6 @@ struct Actor: Decodable {
 struct Entry2: Decodable {
     let key: String
     let value: String
-}
-
-//MARK: Struct for boxOffice
-struct BoxOffice: Decodable {
-    let budget: String
-    let openingWeekendUSA: String
-    let grossUSA: String
-    let cumulativeWorldwideGross: String
 }
 
 //MARK: Struct for similars
@@ -115,6 +107,7 @@ extension Api {
                     do {
                         let decodedData = try JSONDecoder().decode(Details.self, from: data)
                         self.detail = decodedData
+                        print(self.detail)
                     } catch let error {
                         print("Error decoding: ", error)
                     }

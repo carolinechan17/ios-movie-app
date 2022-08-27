@@ -8,13 +8,19 @@
 import SwiftUI
 
 struct DetailPageView: View {
+    let id: String
+    @EnvironmentObject var api: Api
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(api.detail.title)
+        .onAppear() {
+            api.loadDetail(id)
+        }
     }
 }
 
 struct DetailPageView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailPageView()
+        DetailPageView(id: "tt1375666")
     }
 }
