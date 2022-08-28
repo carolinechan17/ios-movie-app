@@ -19,7 +19,7 @@ struct ListView: View {
             AsyncImage(url: URL(string: "\(imageURL)")){image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
                     .padding()
             } placeholder: {
                 Color.gray
@@ -47,6 +47,37 @@ struct ListView: View {
                     .font(.system(size: 15))
                     .padding(.bottom)
             }
+        }
+    }
+}
+
+struct HListView: View {
+    let imageURL: String
+    let name: String
+    let asCharacter: String
+    
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: "\(imageURL)")){image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+            } placeholder: {
+                Color.clear
+            }
+            .frame(width: 120, height: 160)
+            
+            Text("\(name)")
+                .font(.system(size: 13))
+                .fontWeight(.medium)
+                .frame(width: 100, height: 13, alignment: .center)
+            
+            Text("as \(asCharacter)")
+                .font(.system(size: 11))
+                .fontWeight(.light)
+                .frame(width: 100, height: 15, alignment: .center)
+                .padding(.bottom, 20)
         }
     }
 }
