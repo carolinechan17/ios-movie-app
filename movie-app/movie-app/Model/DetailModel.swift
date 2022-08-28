@@ -107,7 +107,6 @@ extension Api {
                     do {
                         let decodedData = try JSONDecoder().decode(Details.self, from: data)
                         self.detail = decodedData
-                        print(self.detail)
                     } catch let error {
                         print("Error decoding: ", error)
                     }
