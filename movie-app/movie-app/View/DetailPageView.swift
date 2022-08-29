@@ -38,10 +38,16 @@ struct DetailPageView: View {
                     }
                 }
                 
-                Text("Actors")
-                    .fontWeight(.bold)
-                    .font(.system(size: 20))
-                    .frame(alignment: .leading)
+                Divider()
+                
+                HStack{
+                    Text("Actors")
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .padding(.leading)
+                    
+                    Spacer()
+                }
                 
                 //MARK: Show actor list
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -52,7 +58,6 @@ struct DetailPageView: View {
                     }
                 }
                 .background(Color("WhiteColor"))
-                .cornerRadius(20)
             }
             .onAppear() {
                 api.loadDetail(id)

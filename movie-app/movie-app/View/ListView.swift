@@ -69,15 +69,14 @@ struct HListView: View {
             .frame(width: 120, height: 160)
             
             Text("\(name)")
-                .font(.system(size: 13))
-                .fontWeight(.medium)
-                .frame(width: 100, height: 13, alignment: .center)
+                .lineLimit(nil)
+                .font(.system(size: 13, weight: .medium))
             
             Text("as \(asCharacter)")
+                .lineLimit(nil)
                 .font(.system(size: 11))
-                .fontWeight(.light)
-                .frame(width: 100, height: 15, alignment: .center)
-                .padding(.bottom, 20)
+                .padding(.bottom)
+                
         }
     }
 }
