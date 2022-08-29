@@ -16,8 +16,8 @@ struct Details: Decodable {
     var year: String = ""
     var image: String = ""
     var releaseDate: String = ""
-    var runtimeMins: String = ""
-    var runtimeStr: String = ""
+    var runtimeMins: String? = nil
+    var runtimeStr: String? = nil
     var plot: String = ""
     var plotLocal: String = ""
     var plotLocalIsRtl: Bool = false
@@ -41,7 +41,7 @@ struct Details: Decodable {
     var contentRating: String = ""
     var imDbRating: String = ""
     var imDbRatingVotes: String = ""
-    var metacriticRating: String = ""
+    var metacriticRating: String? = nil
     var ratings: String? = nil
     var wikipedia: String? = nil
     var posters: String? = nil
@@ -52,12 +52,12 @@ struct Details: Decodable {
     var keywords: String = ""
     var keywordList: [String] = []
     var similars: [Similar] = []
-    var tvSeriesInfo: String? = nil
+    var tvSeriesInfo: TVSeriesInfo? = nil
     var tvEpisodeInfo: String? = nil
     var errorMessage: String? = nil
 }
 
-//MARK: Struct for directorList, writerList, starList, companyList
+//MARK: Struct for directorList, writerList, starList, companyList, creatorList
 struct Entry: Decodable {
     let id: String
     let name: String
@@ -83,6 +83,14 @@ struct Similar: Decodable {
     let title: String
     let image: String
     let imDbRating: String
+}
+
+//MARK: Struct for tv series info
+struct TVSeriesInfo: Decodable {
+    let yearEnd: String
+    let creators: String
+    let creatorList: [Entry]
+    let seasons: [String]
 }
 
 extension Api {
