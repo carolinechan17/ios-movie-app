@@ -35,6 +35,13 @@ struct DetailPageView: View {
                             .font(.system(size: 15))
                             .fontWeight(.regular)
                             .padding(.trailing)
+                        
+                        Spacer()
+                        
+                        Text("Genre(s): \(api.detail.genres)")
+                            .font(.system(size: 15))
+                            .fontWeight(.regular)
+                            .padding(.trailing)
                     }
                 }
                 
