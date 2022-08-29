@@ -60,11 +60,29 @@ struct DetailPageView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 15) {
                         ForEach(api.detail.actorList, id: \.id){ actor in
-                            HListView(imageURL: actor.image, name: actor.name, asCharacter: actor.asCharacter)
+                            ActorListView(imageURL: actor.image, name: actor.name, asCharacter: actor.asCharacter)
                         }
                     }
                 }
                 .background(Color("WhiteColor"))
+    
+                HStack{
+                    Text("Similars")
+                        .fontWeight(.bold)
+                        .font(.system(size: 20))
+                        .padding(.leading)
+                    
+                    Spacer()
+                }
+                
+                //MARK: Show similar movies or tv shows
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 15) {
+                        ForEach(api.detail.similars, id: \.id){ similar in
+                            SimilarListView(imageURL: similar.image, name: similar.title)
+                        }
+                    }
+                }
             }
             .onAppear() {
                 api.loadDetail(id)

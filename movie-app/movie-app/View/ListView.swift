@@ -51,7 +51,7 @@ struct ListView: View {
     }
 }
 
-struct HListView: View {
+struct ActorListView: View {
     let imageURL: String
     let name: String
     let asCharacter: String
@@ -77,6 +77,30 @@ struct HListView: View {
                 .font(.system(size: 11))
                 .padding(.bottom)
                 
+        }
+    }
+}
+
+struct SimilarListView: View {
+    let imageURL: String
+    let name: String
+    
+    var body: some View {
+        VStack {
+            AsyncImage(url: URL(string: "\(imageURL)")){image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .padding()
+            } placeholder: {
+                Color.clear
+            }
+            .frame(width: 160, height: 200)
+            
+            Text("\(name)")
+                .lineLimit(nil)
+                .font(.system(size: 13, weight: .medium))
+                .padding(.bottom)
         }
     }
 }
