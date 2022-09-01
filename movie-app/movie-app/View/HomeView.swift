@@ -11,18 +11,28 @@ struct HomeView: View {
     var body: some View {
         NavigationView {
             ZStack{
-                Color("WhiteColor").edgesIgnoringSafeArea(.all)
+                Color.white.edgesIgnoringSafeArea(.all)
                 VStack{
+                    HStack {
+                        Image(systemName: "film")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .foregroundColor(Color.accentColor)
+                    }
+                    .padding()
+                    
                     NavigationLink(destination: ContentView().environmentObject(Api())) {
-                            HStack {
-                                Image(systemName: "film")
-                                    .resizable()
-                                    .frame(width: 100, height: 100)
-                                    .foregroundColor(Color.white)
-                            }
-                            .padding()
-                            .background(Color("Blue1Color"))
-                            .cornerRadius(20)
+                        HStack {
+                            Text("See more")
+                                .foregroundColor(Color.accentColor)
+                                .font(.system(size: 25, weight: .medium))
+                                .padding(.trailing, 0)
+                            
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(Color.accentColor)
+                                .font(.system(size: 25, weight: .medium))
+                        }
+                        .frame(width: 150, height: 40, alignment: .center)
                     }
                     
                     Spacer()
@@ -30,7 +40,7 @@ struct HomeView: View {
                     Text("iOS Movie App")
                         .fontWeight(.bold)
                         .font(.system(size: 25))
-                        .foregroundColor(Color("Blue2Color"))
+                        .foregroundColor(Color.accentColor)
                         .padding(.bottom, 40)
                 }
             }

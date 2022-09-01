@@ -88,6 +88,7 @@ struct DetailPageView: View {
                 api.loadDetail(id)
             }
         }
+        .navigationTitle("Details")
     }
 }
 

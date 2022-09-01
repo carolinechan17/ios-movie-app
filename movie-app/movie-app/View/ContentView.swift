@@ -26,9 +26,6 @@ struct ContentView: View {
                 Image(systemName: "film.circle")
                 Text("Top Movies")
             }
-            .navigationBarHidden(true)
-            .navigationTitle("Most Popular Movies")
-            .navigationBarTitleDisplayMode(.automatic)
             
             //MARK: Show TV Show poster and brief description
             List(api.tvShows, id: \.id){tvShow in
@@ -43,10 +40,9 @@ struct ContentView: View {
                 Image(systemName: "tv.circle")
                 Text("Top TV Shows")
             }
-            .navigationBarHidden(true)
-            .navigationTitle("Most Popular TV Shows")
-            .navigationBarTitleDisplayMode(.automatic)
         }
+        .navigationTitle("Home")
+        .edgesIgnoringSafeArea([.top, .bottom])
     }
 }
 
