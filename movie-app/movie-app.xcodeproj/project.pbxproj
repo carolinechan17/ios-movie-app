@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E602A74728C9D80A00F5F348 /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = E602A74628C9D80A00F5F348 /* ReadMe.md */; };
 		E64E440528B236A8003E747C /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E64E440428B236A8003E747C /* ListView.swift */; };
 		E66E8D6228B345980048593F /* DetailPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E8D6128B345980048593F /* DetailPageView.swift */; };
 		E66E8D6428B349820048593F /* DetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E66E8D6328B349820048593F /* DetailModel.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E602A74628C9D80A00F5F348 /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		E64E440428B236A8003E747C /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		E66E8D6128B345980048593F /* DetailPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageView.swift; sourceTree = "<group>"; };
 		E66E8D6328B349820048593F /* DetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailModel.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 				E6FE96BE28AE2F45007BFADF /* movie_appApp.swift */,
 				E6FE96C228AE2F46007BFADF /* Assets.xcassets */,
 				E6FE96C428AE2F46007BFADF /* Preview Content */,
+				E602A74628C9D80A00F5F348 /* ReadMe.md */,
 			);
 			path = "movie-app";
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 			files = (
 				E6FE96C628AE2F46007BFADF /* Preview Assets.xcassets in Resources */,
 				E6FE96C328AE2F46007BFADF /* Assets.xcassets in Resources */,
+				E602A74728C9D80A00F5F348 /* ReadMe.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
